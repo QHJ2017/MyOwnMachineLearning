@@ -25,9 +25,9 @@ cv_sets = ShuffleSplit(n_splits=10, test_size=0.20, random_state=0)
 
 regressor = DecisionTreeRegressor(random_state=0)
 
-params = {i + 1: 0 for i in range(10)}
+params = {'max_depth': range(1, 11)}
 scoring_fnc = make_scorer
 grid = GridSearchCV
 
-print grid.fit(y_true, y_pred)
+# print grid.fit(y_true, y_pred)
 print params
